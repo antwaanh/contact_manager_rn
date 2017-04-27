@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 import { StyleSheet, Dimensions } from 'react-native';
 
 import colors from '../../config/colors';
@@ -8,14 +8,13 @@ const window = Dimensions.get('window');
 export const ICON_SIZE = 25;
 export default StyleSheet.create({
   image: {
-    width: window.width / 2,
-    height: window.height / 3.65,
-    borderRadius: window.width / 4.2
+    width: window.width,
+    height: window.height / 2
   },
   headerContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 20
+    paddingBottom: 20
   },
   name: {
     fontSize: 22,
@@ -47,7 +46,7 @@ export default StyleSheet.create({
   actionBody: {
     fontSize: 16,
     color: colors.primaryText,
-    marginBottom: 5,
+    marginBottom: 5
   },
   actionIcons: {
     flexDirection: 'row'

@@ -18,12 +18,12 @@ class Contacts extends Component {
   componentWillMount() {
     const BASE_URI = 'https://gist.githubusercontent.com/antwaanvh/';
     const CONTACTS =
-      '65e7d30beffd51f5ae317ee25ddb39b1/raw/9ba54c7e15bd994480939e0eb749f1d84f61e73f/contacts.json';
+      '65e7d30beffd51f5ae317ee25ddb39b1/raw/5643e0cf8a0762882d848703e2733622a0f8cb71/contacts.json';
 
     fetch(`${BASE_URI}${CONTACTS}`)
       .then(response => response.json())
       .then(data => {
-        this.setState({ contacts: data, contactsLoaded: false });
+        this.setState({ contacts: data, contactsLoaded: true });
       })
       .catch(error => {
         console.error(error);

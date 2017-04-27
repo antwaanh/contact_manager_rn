@@ -5,10 +5,10 @@ import { Tabs, Drawer } from './config/router';
 
 const App = () => {
   if (Platform.OS === 'ios') {
-    return <Tabs />
+    return <Tabs />;
   }
 
-  return <Drawer />
+  return <Drawer />;
 };
 
 export default App;
