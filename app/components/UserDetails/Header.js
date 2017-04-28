@@ -1,19 +1,16 @@
-'use strict'
+'use strict';
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 
 import styles from './styles';
-import { capitalizeFirstLetter } from '../../helpers/string';
+import _ from 'lodash';
 
-const Header = ({picture, name}) => {
+const Header = ({ picture, name }) => {
   return (
     <View style={styles.headerContainer}>
-      <Image
-        source={{ uri: picture.large }}
-        style={styles.image}
-      />
+      <Image source={{ uri: picture.large }} style={styles.image} />
       <Text style={styles.name}>
-        {capitalizeFirstLetter(name.first)} {capitalizeFirstLetter(name.last)}
+        {_.capitalize(name.first)} {_.capitalize(name.last)}
       </Text>
     </View>
   );

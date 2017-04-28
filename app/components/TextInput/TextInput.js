@@ -1,11 +1,10 @@
 import React from 'react';
 import { View, TextInput } from 'react-native';
 
-import styles from './styles'
+import styles from './styles';
 
 class CustomTextInput extends React.Component {
-
-  focus = () => {
+  focus() {
     this._input.focus();
   }
 
@@ -16,12 +15,12 @@ class CustomTextInput extends React.Component {
           autoCorrect={false}
           autoCapitalize="none"
           style={styles.input}
-          ref={(input) => this._input = input}
+          ref={input => (this._input = input)}
           {...this.props}
         />
       </View>
     );
   }
-};
+}
 
-export default CustomTextInput
+export default CustomTextInput;

@@ -15,7 +15,7 @@ class Details extends Component {
         <Actions {...contact} />
         <Info {...contact} />
       </ScrollView>
-    )
+    );
   }
 }
 

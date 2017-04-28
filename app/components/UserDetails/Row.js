@@ -5,7 +5,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import styles, { ICON_SIZE } from './styles';
 import colors from '../../config/colors';
-import { capitalizeFirstLetter, toPhoneNumber } from '../../helpers/string';
+
+import _ from 'lodash';
 
 const Row = ({ label, body, actions = [] }) => {
   return (
@@ -16,10 +17,7 @@ const Row = ({ label, body, actions = [] }) => {
       </View>
       <View style={styles.actionIcons}>
         {actions.map((action, index) => (
-          <TouchableOpacity
-            onPress={() => actions.onPress}
-            key={index}
-          >
+          <TouchableOpacity onPress={() => actions.onPress} key={index}>
             <Icon
               color={colors.link}
               size={ICON_SIZE}
