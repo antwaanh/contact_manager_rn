@@ -1,6 +1,12 @@
 'use strict';
 import React, { Component } from 'react';
-import { ActivityIndicator, View, Text, FlatList } from 'react-native';
+import {
+  ActivityIndicator,
+  Platform,
+  View,
+  Text,
+  FlatList
+} from 'react-native';
 
 import colors from '../config/colors';
 import { ListItem } from '../components/ListItem';
@@ -34,17 +40,19 @@ class Contacts extends Component {
     return (
       <View>
         {this.state.contactsLoaded
-          ? <FlatList
-              style={{ backgroundColor: colors.background }}
-              data={this.state.contacts}
-              renderItem={item => (
-                <ListItem
-                  contact={item.item}
-                  onPress={() => this._handleRowPress(item.item)}
-                />
-              )}
-              keyExtractor={item => item.email}
-            />
+          ? <View>
+              <FlatList
+                style={{ backgroundColor: colors.background }}
+                data={this.state.contacts}
+                renderItem={item => (
+                  <ListItem
+                    contact={item.item}
+                    onPress={() => this._handleRowPress(item.item)}
+                  />
+                )}
+                keyExtractor={item => item.email}
+              />
+            </View>
           : <ActivityIndicator />}
       </View>
     );
